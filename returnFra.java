@@ -5,6 +5,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -35,9 +37,19 @@ class returnFra{
 		final CardLayout card = new CardLayout();
 		final JPanel panel = new JPanel(card);
 		JPanel p1 = new JPanel();
+
+		JLabel t1 = new JLabel("编号:");
+		final JTextField t2 = new JTextField(10);
+
 		String[] title = { "编号", "书名", "状态", "借书时间", "还书时间" };
-		DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""), (Object[])title);
+		DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""),title);
 		JTable table = new JTable(book);
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e){
+				int row=table.getSelectedRow();
+				t2.setText(table.getValueAt(row, 0).toString());
+			}
+		});
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVerticalScrollBarPolicy(22);
 		p1.add(scrollPane); p1.setOpaque(false);
@@ -51,8 +63,6 @@ class returnFra{
 				new UserHome();
  			}
         }); 
-		JLabel t1 = new JLabel("编号:");
-		final JTextField t2 = new JTextField(10);
 		JButton b2 = new JButton("还书");
 		b2.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
@@ -73,8 +83,14 @@ class returnFra{
    				JPanel p1 = new JPanel();
    				p1.setBorder(new TitledBorder(null, "借阅信息", 4, 2, null, Color.RED));
 				String[] title = { "编号", "书名", "状态", "借书时间", "还书时间" };
-				DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""), (Object[])title);
+				DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""),title);
 				JTable table = new JTable(book);
+				table.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e){
+						int row=table.getSelectedRow();
+						t2.setText(table.getValueAt(row, 0).toString());
+					}
+				});
 				JScrollPane scrollPane = new JScrollPane(table);
 				scrollPane.setVerticalScrollBarPolicy(22);
 				p1.add(scrollPane); p1.setOpaque(false);

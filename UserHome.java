@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -33,6 +35,12 @@ class UserHome{
 		final JComboBox<String> combobox = new JComboBox<>();
 		combobox.addItem("书籍名称"); combobox.addItem("书籍作者");
 		final JTextField t1 = new JTextField(10);
+
+		JLabel t2 = new JLabel("编号:");
+		final JTextField t3 = new JTextField(10);
+		JLabel t4 = new JLabel("书名:");
+		final JTextField t5 = new JTextField(10);
+
 		JButton b1 = new JButton("查询");
 		b1.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
@@ -55,6 +63,13 @@ class UserHome{
 					String[] title = { "编号", "书名", "类型", "作者", "描述" };
 					DefaultTableModel book = new DefaultTableModel(d.table(1, t1.getText(), "", ""),title);
 					JTable table = new JTable(book);
+					table.addMouseListener(new MouseAdapter() {
+						public void mouseClicked(MouseEvent e){
+							int row=table.getSelectedRow();
+							t3.setText(table.getValueAt(row, 0).toString());
+							t5.setText(table.getValueAt(row, 1).toString());
+						}
+					});
 					JScrollPane scrollPane = new JScrollPane(table);
 					scrollPane.setVerticalScrollBarPolicy(22);
 					px.add(scrollPane);
@@ -68,6 +83,13 @@ class UserHome{
 					String[] title = { "编号", "书名", "类型", "作者", "描述" };
 					DefaultTableModel book = new DefaultTableModel(d.table(2, "", t1.getText(), ""),title);
 					JTable table = new JTable(book);
+					table.addMouseListener(new MouseAdapter() {
+						public void mouseClicked(MouseEvent e){
+							int row=table.getSelectedRow();
+							t3.setText(table.getValueAt(row, 0).toString());
+							t5.setText(table.getValueAt(row, 1).toString());
+						}
+					});
 					JScrollPane scrollPane = new JScrollPane(table);
 					scrollPane.setVerticalScrollBarPolicy(22);
 					px.add(scrollPane);
@@ -84,6 +106,13 @@ class UserHome{
 		String[] title = { "编号", "书名", "类型", "作者", "描述" };
 		DefaultTableModel book = new DefaultTableModel(d.table(0, "", "", ""),title);
 		JTable table = new JTable(book);
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e){
+				int row=table.getSelectedRow();
+				t3.setText(table.getValueAt(row, 0).toString());
+				t5.setText(table.getValueAt(row, 1).toString());
+			}
+		});
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVerticalScrollBarPolicy(22);
 		px.add(scrollPane);
@@ -91,10 +120,7 @@ class UserHome{
 
 		JPanel p2 = new JPanel();
 		p2.setBorder(new TitledBorder(null, "借书", 4, 2, null, Color.RED));
-		JLabel t2 = new JLabel("编号:");
-		final JTextField t3 = new JTextField(10);
-		JLabel t4 = new JLabel("书名:");
-		final JTextField t5 = new JTextField(10);
+		
 		JButton b2 = new JButton("借书");
 		b2.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
