@@ -7,7 +7,6 @@ public class MyBookManager{
 	public static String bookname;
 	public static String bookauthor;
 	public static String username;
-
 	public static void main(String[] args) {
 		new LoginFra();
 	}
