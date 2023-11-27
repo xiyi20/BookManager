@@ -22,7 +22,7 @@ class borrowPanel{
         this.p1 = new JPanel();
         this.p1.setBorder(new TitledBorder(null, "借阅信息", 4, 2, null, Color.RED));
         String[] title = { "借书人", "书名", "状态", "借书时间", "还书时间" };
-        DefaultTableModel book = new DefaultTableModel((Object[][])ztable, (Object[])title);
+        DefaultTableModel book = new DefaultTableModel(ztable, (Object[])title);
         JTable table = new JTable(book);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setVerticalScrollBarPolicy(22);

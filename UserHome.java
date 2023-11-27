@@ -43,7 +43,7 @@ class UserHome{
 					panel.removeAll();
 					JPanel px = new JPanel();
 					String[] title = { "编号", "书名", "类型", "作者", "描述" };
-					DefaultTableModel book = new DefaultTableModel((Object[][])d.table(1, t1.getText(), "", ""), (Object[])title);
+					DefaultTableModel book = new DefaultTableModel(d.table(1, t1.getText(), "", ""),title);
 					JTable table = new JTable(book);
 					JScrollPane scrollPane = new JScrollPane(table);
 					scrollPane.setVerticalScrollBarPolicy(22);
@@ -56,7 +56,7 @@ class UserHome{
 					panel.removeAll();
 					JPanel px = new JPanel();
 					String[] title = { "编号", "书名", "类型", "作者", "描述" };
-					DefaultTableModel book = new DefaultTableModel((Object[][])d.table(2, "", t1.getText(), ""), (Object[])title);
+					DefaultTableModel book = new DefaultTableModel(d.table(2, "", t1.getText(), ""),title);
 					JTable table = new JTable(book);
 					JScrollPane scrollPane = new JScrollPane(table);
 					scrollPane.setVerticalScrollBarPolicy(22);
@@ -71,7 +71,7 @@ class UserHome{
 		p1.setOpaque(false);
 		JPanel px = new JPanel();
 		String[] title = { "编号", "书名", "类型", "作者", "描述" };
-		DefaultTableModel book = new DefaultTableModel((Object[][])d.table(0, "", "", ""), (Object[])title);
+		DefaultTableModel book = new DefaultTableModel(d.table(0, "", "", ""),title);
 		JTable table = new JTable(book);
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVerticalScrollBarPolicy(22);

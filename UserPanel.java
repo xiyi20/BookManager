@@ -48,7 +48,7 @@ class UserPanel{
 		this.py.add(this.p1, "North");
 		this.p3 = new JPanel();
 		String[] title = { "编号", "用户名", "密码", "性别", "电话" };
-		DefaultTableModel book = new DefaultTableModel((Object[][])ytable, (Object[])title);
+		DefaultTableModel book = new DefaultTableModel(ytable, (Object[])title);
 		JTable table = new JTable(book);
 		table.setSize(500, 50);
 		JScrollPane scrollPane = new JScrollPane(table);

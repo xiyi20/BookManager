@@ -59,7 +59,7 @@ class BookPanel{
         this.py.setOpaque(false);
         this.p3 = new JPanel();
         String[] title = { "编号", "书名", "类型", "作者", "价格", "库存", "状态" };
-        DefaultTableModel book = new DefaultTableModel((Object[][])xtable, (Object[])title);
+        DefaultTableModel book = new DefaultTableModel(xtable, (Object[])title);
         JTable table = new JTable(book);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setVerticalScrollBarPolicy(22);

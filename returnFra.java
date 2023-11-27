@@ -36,7 +36,7 @@ class returnFra{
 		final JPanel panel = new JPanel(card);
 		JPanel p1 = new JPanel();
 		String[] title = { "编号", "书名", "状态", "借书时间", "还书时间" };
-		DefaultTableModel book = new DefaultTableModel((Object[][])d.table(3, "", "", ""), (Object[])title);
+		DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""), (Object[])title);
 		JTable table = new JTable(book);
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVerticalScrollBarPolicy(22);
@@ -73,7 +73,7 @@ class returnFra{
    				JPanel p1 = new JPanel();
    				p1.setBorder(new TitledBorder(null, "借阅信息", 4, 2, null, Color.RED));
 				String[] title = { "编号", "书名", "状态", "借书时间", "还书时间" };
-				DefaultTableModel book = new DefaultTableModel((Object[][])d.table(3, "", "", ""), (Object[])title);
+				DefaultTableModel book = new DefaultTableModel(d.table(3, "", "", ""), (Object[])title);
 				JTable table = new JTable(book);
 				JScrollPane scrollPane = new JScrollPane(table);
 				scrollPane.setVerticalScrollBarPolicy(22);
