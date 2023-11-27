@@ -15,7 +15,8 @@ class DBconnect{
     private String url = "jdbc:mysql://localhost:3306/bookmanager";
     private String user = "root";
     private String password = "324254";
-    private Random random = new Random(); private Connection c;
+    private Random random = new Random();
+    private Connection c;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
    
     public DBconnect() {

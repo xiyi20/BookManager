@@ -15,8 +15,12 @@ class bgPanel{
                 if (x == 1) { adress = "java\\project\\book\\image\\bg1.jpg"; }
                 else if (x == 2) { adress = "java\\project\\book\\image\\bg2.jpg"; }
                 else if (x == 3) { adress = "java\\project\\book\\image\\bg3.jpg"; }
-                ImageIcon imageIcon = new ImageIcon(adress);
-                // ImageIcon imageIcon = new ImageIcon(getClass().getResource(adress));
+                ImageIcon imageIcon;
+                try {
+                    imageIcon = new ImageIcon(getClass().getResource(adress));
+                } catch (Exception e) {
+                    imageIcon = new ImageIcon(adress);
+                }
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
