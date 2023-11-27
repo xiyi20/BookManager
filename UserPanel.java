@@ -1,4 +1,4 @@
-package project.book;
+package git.BookManager;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

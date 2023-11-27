@@ -1,4 +1,4 @@
-package project.book;
+package git.BookManager;
  
 import java.sql.Connection;
 import java.sql.DriverManager;

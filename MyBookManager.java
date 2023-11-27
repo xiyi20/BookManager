@@ -1,4 +1,4 @@
-package project.book;
+package git.BookManager;
 
 public class MyBookManager{
 	public static int Id;
