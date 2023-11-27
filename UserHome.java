@@ -37,7 +37,17 @@ class UserHome{
 		b1.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
    				if (t1.getText().isEmpty()) {
-     				card.show(panel, "默认");
+					panel.removeAll();
+					JPanel px = new JPanel();
+					String[] title = { "编号", "书名", "类型", "作者", "描述" };
+					DefaultTableModel book = new DefaultTableModel(d.table(0, "", "", ""),title);
+					JTable table = new JTable(book);
+					JScrollPane scrollPane = new JScrollPane(table);
+					scrollPane.setVerticalScrollBarPolicy(22);
+					px.add(scrollPane);
+					panel.add(px, "default");
+     				card.show(panel, "default");
+					f.revalidate();
 				}
    				else if (combobox.getSelectedItem().equals("书籍名称")) {
 					panel.removeAll();
@@ -69,6 +79,7 @@ class UserHome{
         });
 		p1.add(combobox); p1.add(t1); p1.add(b1);
 		p1.setOpaque(false);
+
 		JPanel px = new JPanel();
 		String[] title = { "编号", "书名", "类型", "作者", "描述" };
 		DefaultTableModel book = new DefaultTableModel(d.table(0, "", "", ""),title);
@@ -76,7 +87,8 @@ class UserHome{
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVerticalScrollBarPolicy(22);
 		px.add(scrollPane);
-		panel.add(px, "默认");
+		panel.add(px);
+
 		JPanel p2 = new JPanel();
 		p2.setBorder(new TitledBorder(null, "借书", 4, 2, null, Color.RED));
 		JLabel t2 = new JLabel("编号:");
