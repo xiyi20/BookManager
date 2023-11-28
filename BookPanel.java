@@ -5,6 +5,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -51,7 +53,6 @@ class BookPanel{
                 } 
             }
         });
-
         this.p1.add(comboBox);
         this.p1.add(t15); this.p1.add(bx);
         this.p1.setOpaque(false);
@@ -60,25 +61,38 @@ class BookPanel{
         this.p3 = new JPanel();
         String[] title = { "编号", "书名", "类型", "作者", "价格", "库存", "状态" };
         DefaultTableModel book = new DefaultTableModel(xtable, (Object[])title);
+
+        JLabel t17 = new JLabel("编号:");
+        final JTextField t18 = new JTextField(22);
+        JLabel t19 = new JLabel("书名:");
+        final JTextField t20 = new JTextField(22);
+        JLabel t21 = new JLabel("作者:");
+        final JTextField t22 = new JTextField(22);
+        JLabel t23 = new JLabel("出版社:");
+        final JTextField t24 = new JTextField(21);
+        JLabel t25 = new JLabel("价格:");
+        final JTextField t26 = new JTextField(22);
+        JLabel t27 = new JLabel("库存:");
+        final JTextField t28 = new JTextField(22);
+        JLabel t29 = new JLabel("描述:");
+        final JTextField t30 = new JTextField(48);
+        JLabel t31 = new JLabel("类型");
+
         JTable table = new JTable(book);
+        table.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                int row=table.getSelectedRow();
+                t18.setText(table.getValueAt(row, 0).toString());
+                t20.setText(table.getValueAt(row, 1).toString());
+                t22.setText(table.getValueAt(row, 3).toString());
+                t26.setText(table.getValueAt(row, 4).toString());
+                t28.setText(table.getValueAt(row, 5).toString());
+            }
+        });
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setVerticalScrollBarPolicy(22);
         this.p3.add(scrollPane);
-        JLabel t17 = new JLabel("编号:");
-        final JTextField t18 = new JTextField(18);
-        JLabel t19 = new JLabel("书名:");
-        final JTextField t20 = new JTextField(18);
-        JLabel t21 = new JLabel("作者:");
-        final JTextField t22 = new JTextField(17);
-        JLabel t23 = new JLabel("出版社:");
-        final JTextField t24 = new JTextField(17);
-        JLabel t25 = new JLabel("价格:");
-        final JTextField t26 = new JTextField(18);
-        JLabel t27 = new JLabel("库存:");
-        final JTextField t28 = new JTextField(18);
-        JLabel t29 = new JLabel("描述:");
-        final JTextField t30 = new JTextField(39);
-        JLabel t31 = new JLabel("类型");
+        
         final JComboBox<String> comboBox1 = new JComboBox<>();
         comboBox1.addItem("小说");
         comboBox1.addItem("教材");
@@ -111,7 +125,7 @@ class BookPanel{
                     if (comboBox2.getSelectedItem().equals("上架")) status = 1; 
                     if (d.status(1, bookid, "", 2)){ 
                         if (d.modifybook(bookid, bookname, type, author, publish, price, number, status, remark)){ 
-                            JOptionPane.showMessageDialog(null, "修改成功");
+                            JOptionPane.showMessageDialog(null, "修改成功,请刷新查看");
                             MyBookManager.message = 0; 
                         }
                         else { 
@@ -125,9 +139,28 @@ class BookPanel{
                 } 
             }
         });
-        this.p3.add(t17); this.p3.add(t18); this.p3.add(t19); this.p3.add(t20); this.p3.add(t21); this.p3.add(t22);
-        this.p3.add(t23); this.p3.add(t24); this.p3.add(t25); this.p3.add(t26); this.p3.add(t27); this.p3.add(t28); this.p3.add(t29);
-        this.p3.add(t30); this.p3.add(t31); this.p3.add(comboBox1); this.p3.add(t32); this.p3.add(comboBox2); this.p3.add(b3);
+        JButton b4 = new JButton("重置");
+        b4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                t18.setText("");
+                t20.setText("");
+                t22.setText("");
+                t24.setText("");
+                t26.setText("");
+                t28.setText("");
+                t30.setText("");
+            }
+        });
+        this.p3.add(t17); this.p3.add(t18);
+        this.p3.add(t19); this.p3.add(t20);
+        this.p3.add(t21); this.p3.add(t22);
+        this.p3.add(t23); this.p3.add(t24);
+        this.p3.add(t25); this.p3.add(t26);
+        this.p3.add(t27); this.p3.add(t28);
+        this.p3.add(t29); this.p3.add(t30);
+        this.p3.add(t31); this.p3.add(comboBox1);
+        this.p3.add(t32); this.p3.add(comboBox2);
+        this.p3.add(b3); this.p3.add(b4);
         this.p3.setOpaque(false);
         this.py.add(this.p3, "Center");
         this.panelcard.add(this.py);

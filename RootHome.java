@@ -36,21 +36,21 @@ class RootHome{
         p1.setSize(250, 100);
         p1.setBorder(new TitledBorder(null, "书籍添加", 4, 2, null, Color.RED));
         JLabel t1 = new JLabel("书名:");
-        final JTextField t2 = new JTextField(40);
+        final JTextField t2 = new JTextField(45);
         JLabel t3 = new JLabel("作者:");
-        final JTextField t4 = new JTextField(40);
+        final JTextField t4 = new JTextField(45);
         JLabel t5 = new JLabel("出版社:");
-        final JTextField t6 = new JTextField(40);
+        final JTextField t6 = new JTextField(44);
         JLabel t7 = new JLabel("价格:");
-        final JTextField t8 = new JTextField(40);
+        final JTextField t8 = new JTextField(45);
         JLabel t9 = new JLabel("库存:");
-        final JTextField t10 = new JTextField(40);
+        final JTextField t10 = new JTextField(45);
         JLabel t11 = new JLabel("类型:");
         final JComboBox<String> t12 = new JComboBox<>();
         t12.addItem("小说"); t12.addItem("教材");
         t12.addItem("科普"); t12.addItem("杂志");
         JLabel t13 = new JLabel("概述:");
-        final JTextField t14 = new JTextField(40);
+        final JTextField t14 = new JTextField(45);
         JButton b1 = new JButton("添加");
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
