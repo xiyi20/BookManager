@@ -4,8 +4,32 @@
 https://www.oracle.com/java/technologies/downloads/#java21  
 其他版本可能会出行界面显示异常等问题  
 使用gui开发的图形化用户界面,可视化操作mysql数据表  
-目前所有功能均可正常使用,以后可能还会继续添加和完善  
+目前所有功能均可正常使用,以后可能还会继续添加和完善,预览图:  
+
+普通用户:  
+-
+登录界面:  
+![登录界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/login.png)  
+注册界面:  
+![注册界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/regist.png)  
+借书界面:  
+![借书界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/borrowbook.png)  
+还书界面:  
+![还书界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/returnbook.png)  
+
+管理员:  
+-
+添加书籍界面:  
+![加书界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/bookadd.png)  
+修改书籍界面:  
+![改书界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/bookmodify.png)  
+修改用户界面:  
+![改用户界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/usermodify.png)  
+借阅信息界面:  
+![还书界面](https://raw.githubusercontent.com/xiyi20/BookManager/main/preview/borrowinfo.png)  
+
 如果您想复刻此项目,以下是所有建议:  
+-
 ```
 CREATE TABLE  
     `book` (  
