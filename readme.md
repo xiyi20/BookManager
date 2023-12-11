@@ -1,4 +1,4 @@
-基于javaGui开发的图书管理系统
+一个基于javaGui开发的图书管理系统
 =
 推荐jdk版本21  
 https://www.oracle.com/java/technologies/downloads/#java21  
