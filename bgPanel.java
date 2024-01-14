@@ -12,9 +12,9 @@ class bgPanel{
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 String adress = "";
-                if (x == 1) { adress = "java\\project\\book\\image\\bg1.jpg"; }
-                else if (x == 2) { adress = "java\\project\\book\\image\\bg2.jpg"; }
-                else if (x == 3) { adress = "java\\project\\book\\image\\bg3.jpg"; }
+                if (x == 1) { adress = "git\\BookManager\\image\\bg1.jpg"; }
+                else if (x == 2) { adress = "git\\BookManager\\image\\bg2.jpg"; }
+                else if (x == 3) { adress = "git\\BookManager\\image\\bg3.jpg"; }
                 ImageIcon imageIcon;
                 try {
                     imageIcon = new ImageIcon(getClass().getResource(adress));
